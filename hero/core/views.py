@@ -8,6 +8,5 @@ def index(request):
 def about(request):
     return HttpResponse('Hello Heros What about you')
 
-
 def contact(request):
     return HttpResponse('Hello Heros contact in emergency')
