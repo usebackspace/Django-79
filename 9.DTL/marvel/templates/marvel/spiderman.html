@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>I am a Spider-man</h1>
+
+    <h2>Willian of Spider-Man is {{willian|capfirst}}</h2>
+    <h2>Willian of Spider-Man is {{willian|length}}</h2>
+
+    <h1>Presentation Logic</h1>
+
+    <h2>===== If Condition =======</h2>
+    {% if willian == 'goblin' %}
+    <h3>Color of willian is Green</h3>
+    {% endif %}
+    
+    <h2>===== If else Condition =======</h2>
+    
+    {% if willian == 'goblin' %}
+    <h3>Color of willian is Green</h3>
+    {% else %}
+    <h3>All willian are dead</h3>
+    {% endif %}
+
+    <h2>===== If elif Condition =======</h2>
+    
+    {% if willian == 'goblin' %}
+    <h3>Color of willian is Green</h3>
+    {% elif willian == 'venom' %}
+    <h3>Color of willian is Black</h3>
+    {% elif willian == 'thanos' %}
+    <h3>Color of willian is Bangan</h3>
+    {% else %}
+    <h3>All willian are dead</h3>
+    {% endif %}
+
+</body>
+</html>
