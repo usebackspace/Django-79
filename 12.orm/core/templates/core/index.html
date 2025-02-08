@@ -9,6 +9,27 @@
   </head>
   <body>
     <h1>Django Orm</h1>
+    {{mf}}
+      <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Heroic Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for m in mf %}
+      <tr>
+        <th scope="row">{{m.id}}</th>
+        <td>{{m.first_name}}</td>
+        <td>{{m.last_name}}</td>
+        <td>{{m.heroic_name}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 
     <script src="{% static "core/js/jquery.js" %}"></script>
     <script src="{% static "core/js/popper.js" %}"></script>
