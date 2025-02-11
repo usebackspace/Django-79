@@ -11,9 +11,11 @@
 
     <form action="" method='POST'>
         {% csrf_token %}
+
         {% for m in mf %}
         {{m.label_tag}} {{m}} <br><br>
         {% endfor %}
+        
         <input type="submit">
     </form>
 

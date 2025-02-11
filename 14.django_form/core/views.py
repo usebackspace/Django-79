@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import MarvelForm
+from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
@@ -17,8 +18,14 @@ def form_post(request):
             print(f_name)
             print(l_name)
             print(h_name)
-            mf = MarvelForm()
+            # mf = MarvelForm()
+            # return HttpResponse('Successfully submitted')           
+            # return render(request,'core/success.html')
+            return redirect('/success/')
     else:
         mf= MarvelForm()
         print('===')
     return render(request,'core/form_post.html',{'mf':mf})
+
+def success(request):
+    return render(request,'core/success.html')
