@@ -1,0 +1,42 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="{% static "core/css/bootstrap.min.css" %}">
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    
+    <table>
+      {{mf.as_table}}
+    </table>
+
+    <hr>
+    {% comment %} {{mf.as_p}} {% endcomment %}
+
+    <hr>
+    {% comment %} {{mf.as_ul}} {% endcomment %}
+    
+    <hr>
+
+    <h2> Render Fields</h2>
+
+    {{mf.first_name}}<br><br>
+    {{mf.first_name.label}}<br><br>
+    {{mf.first_name.label_tag}}
+    {{mf.first_name.id_for_label}}
+
+    <h2>For loop</h2>
+
+    {% for m in mf %}
+      {{m.label_tag}} {{m}} <br><br>
+    {% endfor %}
+
+    <script src="{% static "core/js/jquery.js" %}"></script>
+    <script src="{% static "core/js/popper.js" %}"></script>
+    <script src="{% static "core/js/bootstrap.min.js" %}"></script>
+  </body>
+</html>
