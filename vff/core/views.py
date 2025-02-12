@@ -9,7 +9,9 @@ def index(request):
         mf = MarvelForm(request.POST)
         if mf.is_valid():
             f_name = mf.cleaned_data['first_name']
+            l_name = mf.cleaned_data['last_name']
             print(f_name)
+            print(l_name)
            
             # mf = MarvelForm()
             # return HttpResponse('Successfully submitted')           

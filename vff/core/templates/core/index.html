@@ -14,17 +14,7 @@
 
     <form action="" method='POST' novalidate>
         {% csrf_token %}
-         
-        {% if mf.non_field_errors %}
-          {% for error in mf.non_field_errors %}
-          {{error}}
-          {% endfor %}
-        {% endif %}
-
-        {% for m in mf %}
-        {{m.label_tag}} {{m}} <br><br>
-        {% endfor %}
-        
+        {{mf.as_p}}
         <input type="submit">
     </form>
 
