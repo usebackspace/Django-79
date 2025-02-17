@@ -10,7 +10,7 @@
   <body>
     <h1>Model Form</h1>
 
-    <form action="" method='POST'>
+    <form action="" method='POST' novalidate>
       {% csrf_token %}
       {{mf.as_p}}
       <input type="submit">
