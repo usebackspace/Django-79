@@ -5,3 +5,8 @@ from django.db import models
 class MarvelModel(models.Model):
     name = models.CharField(max_length=50)
     heroic_name = models.CharField(max_length=50)
+
+
+class DcModel(models.Model):
+    name = models.CharField(max_length=50)
+    heroic_name = models.CharField(max_length=50)
