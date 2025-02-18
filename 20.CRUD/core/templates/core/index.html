@@ -1,0 +1,72 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="{% static "core/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/main.css" %}">
+  </head>
+  <body>
+
+    <div class="main">
+      <div class="head">
+        <h1 class="heading">CRUD Avenger</h1>
+      </div>
+      <div class="main2">
+        <div class="row">
+          <div class="col-4 aven-form">
+            <h3 class="avenger-head">Avenger</h3>
+            <div class="form">
+              <form action="" method='POST'>
+                {% csrf_token %}
+                {{mf.as_p}}
+                <input type="submit">
+              </form>
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="avenger-Database">
+              <h3 class="aven-db">Avenger Database</h3>
+            </div>
+            <div class="aven-table">
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Heroic Name</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for m in mm %}
+                  <tr>
+                    <th scope="row">{{m.id}}</th>
+                    <td>{{m.name}}</td>
+                    <td>{{m.heroic_name}}</td>
+                    <td>
+                      <a href="{% url "marvelupdate" m.id %}"><button type="button" class="btn btn-warning">Update</button></a>
+                      <a href="{% url "marveldelete" m.id %}"><button type="button" class="btn btn-danger">Delete</button></a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <script src="{% static "core/js/jquery.js" %}"></script>
+    <script src="{% static "core/js/popper.js" %}"></script>
+    <script src="{% static "core/js/bootstrap.min.js" %}"></script>
+  </body>
+</html>
