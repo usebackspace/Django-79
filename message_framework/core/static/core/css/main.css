@@ -1,0 +1,48 @@
+body{
+    background-color: rgb(5, 128, 133);
+}
+
+.tbody{
+    background-color: blue;
+}
+
+.avenger-head,.aven-db,.heading{
+    color: whitesmoke;
+}
+
+.heading{
+    text-align: center;
+    margin: 10px;
+    border: 5px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: burlywood;
+    color: brown;
+}
+
+.main2{
+    margin-top: 20px;
+}
+
+.aven-form{
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+
+.avenger-Database{
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.x{
+    width: 70%;
+}
+
+span{
+    color: green;
+    background-color: bisque;
+    font-size: 20px;
+    padding: 5px;
+    float: inline-end;
+}
