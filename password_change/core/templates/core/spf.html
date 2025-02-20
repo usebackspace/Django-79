@@ -1,0 +1,39 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="{% static "core/css/bootstrap.min.css" %}">
+  </head>
+  <body>
+    <h1>Login Form {{request.user}}</h1>
+
+    <form action="" method='POST' novalidate>
+      {% csrf_token %}
+
+      {% for m in mf %}
+        {{m.label_tag}} {{m}} {{m.errors}} <br><br>
+      {% endfor %}
+
+      <input type="submit">
+    </form>
+
+    {% if mf.non_field_errors %}
+    {% for error in mf.non_field_errors %}
+        {{error}}
+    {% endfor %}
+    {% endif %}
+
+    {% if messages %}
+      {% for message in messages %}
+        {{message}}
+      {% endfor %}
+    {% endif %}
+
+    <script src="{% static "core/js/jquery.js" %}"></script>
+    <script src="{% static "core/js/popper.js" %}"></script>
+    <script src="{% static "core/js/bootstrap.min.js" %}"></script>
+  </body>
+</html>
